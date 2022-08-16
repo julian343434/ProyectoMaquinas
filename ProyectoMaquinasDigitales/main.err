@@ -1,4 +1,4 @@
-Compiling F:\ProyectoMaquinas\ProyectoMaquinasDigitales\main on 13-ago.-22 at 15:52
+Compiling C:\Users\La Economia\Documents\proyecto\ProyectoMaquinas\ProyectoMaquinasDigitales\main on 15-ago.-22 at 21:10
 >>> Warning 225 "C:\Program Files (x86)\PICC\Devices\18F4550.h" Line 83(15,22): Duplicate #define
 >>> Warning 225 "C:\Program Files (x86)\PICC\Devices\18F4550.h" Line 84(15,22): Duplicate #define
 >>> Warning 225 "C:\Program Files (x86)\PICC\Devices\18F4550.h" Line 85(15,22): Duplicate #define
@@ -319,4 +319,15 @@ Compiling F:\ProyectoMaquinas\ProyectoMaquinasDigitales\main on 13-ago.-22 at 15
 >>> Warning 225 "C:\Program Files (x86)\PICC\Devices\18F4550.h" Line 847(17,43): Duplicate #define
 >>> Warning 225 "C:\Program Files (x86)\PICC\Devices\18F4550.h" Line 848(16,43): Duplicate #define
 >>> Warning 225 "C:\Program Files (x86)\PICC\Devices\18F4550.h" Line 849(16,43): Duplicate #define
-*** Error 7 "main.c" Line 22(0,1): Invalid Pre-Processor directive
+>>> Warning 216 "main.c" Line 131(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms2)
+>>> Warning 216 "main.c" Line 131(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_send_nibble)
+>>> Warning 216 "main.c" Line 131(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_send_byte)
+>>> Warning 216 "main.c" Line 131(1,2): Interrupts disabled during call to prevent re-entrancy:  (@DIV88)
+>>> Warning 216 "main.c" Line 131(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_putc)
+>>> Warning 216 "main.c" Line 131(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_gotoxy)
+>>> Warning 216 "main.c" Line 131(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PSTRINGC_697)
+>>> Warning 216 "main.c" Line 131(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PSTRINGCN_697)
+>>> Warning 202 "main.c" Line 17(7,15): Variable never used:   iterador
+      Memory usage:   ROM=7%      RAM=2% - 4%
+      0 Errors,  329 Warnings.
+Build Successful.

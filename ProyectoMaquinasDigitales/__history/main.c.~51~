@@ -22,11 +22,12 @@ boolean Start=true,Cro=false;
 
 void Cronometro(){
    if(Cro==true){
-      tiempo++;
+      tiempo=tiempo+1;
       if (tiempo>60){
-      minuto++;
+      minuto=1+minuto;
       }
-   }else{
+   }
+   else{
       minutoR=minuto+minutoR;
       segundoR=tiempo+segundoR;
       tiempo=0;
@@ -36,12 +37,18 @@ void Cronometro(){
 
 #int_timer0
 void timer0(){
-   output_toggle(PIN_E2);
+   iterador=iterador+1;
+   if(iterador==2000){
+   output_toggle(PIN_B5);
    Cronometro();
-   lcd_gotoxy(1,2);
-   printf(lcd_putc,"%2u : %2u",minutoR,segundoR);
-   lcd_gotoxy(1,1);
-   set_timer0(57724);
+   }
+   else{
+      lcd_gotoxy(10,2); 
+      printf(lcd_putc,"\f%3u",segundoR);
+      lcd_gotoxy(10,2);       
+      printf(lcd_putc,"\f:%3u",minutoR);   
+   }
+   set_timer0(131);
 }
 
 
@@ -63,8 +70,9 @@ void puerta(){
    Output_low(pin_A1);
    Cro=false;
 }
+
 void der(recorrer){
-   lcd_gotoxy(9,1);
+   lcd_gotoxy(1,1);
    printf(lcd_putc,"subiendo");
    output_high(pin_E0);
    delay_ms(recorrer*t);
@@ -72,7 +80,7 @@ void der(recorrer){
    printf(lcd_putc,"\f");
 }
 void izq(recorrer){
-   lcd_gotoxy(9,1);
+   lcd_gotoxy(1,1);
    printf(lcd_putc,"bajando");
    Output_high(pin_E1);
    delay_ms(recorrer*t);
@@ -83,17 +91,17 @@ void main(){
    set_tris_A(0xff);
    set_tris_B(0xff);
    set_tris_C(0xff);
-   set_tris_D(0x00);
-   set_tris_E(0x00);
+   set_tris_A(0x00);
+   set_tris_A(0x00);
    lcd_Init();
-   setup_timer_0(RTCC_INTERNAL | T0_DIV_256 );
-   set_timer0(57724);
+   setup_timer_0(T0_8_BIT | RTCC_INTERNAL | T0_DIV_4 );
+   set_timer0(131);
    Enable_Interrupts(Int_TIMER0);
    Enable_Interrupts(Int_Ext);
    Enable_Interrupts(Global);
    Ext_Int_Edge(0, L_TO_H);
    lcd_gotoxy(1,1);
-   printf(lcd_putc,"Piso %i",cont);
+   printf(lcd_putc,"Piso%i",cont);
    while(Start){
       if(input(pin_C0)==1){
          Cro=true;
@@ -115,7 +123,7 @@ void main(){
          recorrer=cont-actual;
          der(recorrer);
          lcd_gotoxy(1,1);
-         printf(lcd_putc,"Piso %i",cont);
+         printf(lcd_putc,"Piso%i",cont);
          puerta();
          actual=cont;
       }
@@ -123,7 +131,7 @@ void main(){
          recorrer=-cont+actual;
          izq(recorrer);
          lcd_gotoxy(1,1);
-         printf(lcd_putc,"Piso %i",cont);
+         printf(lcd_putc,"Piso%i",cont);
          puerta();
          actual=cont;         
       }

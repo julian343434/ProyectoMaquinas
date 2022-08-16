@@ -63,9 +63,10 @@ void puerta(){
    Output_low(pin_A1);
    Cro=false;
 }
+
 void der(recorrer){
    lcd_gotoxy(9,1);
-   printf(lcd_putc,"subiendo");
+   printf(lcd_putc," /|\ ");
    output_high(pin_E0);
    delay_ms(recorrer*t);
    Output_low(pin_E0);
@@ -73,7 +74,7 @@ void der(recorrer){
 }
 void izq(recorrer){
    lcd_gotoxy(9,1);
-   printf(lcd_putc,"bajando");
+   printf(lcd_putc," \|/ ");
    Output_high(pin_E1);
    delay_ms(recorrer*t);
    output_low(pin_E1);

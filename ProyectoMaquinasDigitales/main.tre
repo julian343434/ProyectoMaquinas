@@ -1,5 +1,5 @@
 ÀÄmain
-   ÃÄMAIN  0/330  Ram=1
+   ÃÄMAIN  0/396  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄlcd_init  0/196  Ram=6
    ³  ³  ÃÄ@delay_ms2  0/40  Ram=1
@@ -16,7 +16,7 @@
    ³  ÃÄlcd_gotoxy  0/34  Ram=4
    ³  ³  ÀÄlcd_send_byte  0/70  Ram=3
    ³  ³     ÀÄ*
-   ³  ÃÄ@PSTRINGCN_697  0/42  Ram=3
+   ³  ÃÄ@PSTRINGCN_697  0/30  Ram=3
    ³  ³  ÀÄlcd_putc  0/80  Ram=1
    ³  ³     ÃÄlcd_gotoxy  0/34  Ram=4
    ³  ³     ³  ÀÄ*
@@ -29,7 +29,7 @@
    ³  ³     ³  ÀÄ*
    ³  ³     ÀÄlcd_send_byte  0/70  Ram=3
    ³  ³        ÀÄ*
-   ³  ÃÄ@PRINTF_D_697  0/218  Ram=6
+   ³  ÃÄ@PRINTF_D_697  0/242  Ram=6
    ³  ³  ÃÄ@DIV88  0/40  Ram=3
    ³  ³  ÃÄ@DIV88  0/40  Ram=3
    ³  ³  ÃÄlcd_putc  0/80  Ram=1
@@ -40,7 +40,7 @@
    ³  ³  ³  ÀÄ*
    ³  ³  ÀÄlcd_putc  0/80  Ram=1
    ³  ³     ÀÄ*
-   ³  ÃÄder  0/164  Ram=6
+   ³  ÃÄder  0/166  Ram=6
    ³  ³  ÃÄlcd_gotoxy  0/34  Ram=4
    ³  ³  ³  ÀÄ*
    ³  ³  ÃÄ@PSTRINGC_697  0/32  Ram=2
@@ -53,14 +53,16 @@
    ³  ³     ÀÄ*
    ³  ÃÄlcd_gotoxy  0/34  Ram=4
    ³  ³  ÀÄ*
-   ³  ÃÄ@PSTRINGCN_697  0/42  Ram=3
+   ³  ÃÄ@PSTRINGCN_697  0/30  Ram=3
    ³  ³  ÀÄ*
-   ³  ÃÄ@PRINTF_D_697  0/218  Ram=6
+   ³  ÃÄ@PRINTF_D_697  0/242  Ram=6
    ³  ³  ÀÄ*
-   ³  ÃÄpuerta  0/66  Ram=1
+   ³  ÃÄpuerta  0/120  Ram=1
+   ³  ³  ÃÄ@delay_ms2  0/40  Ram=1
+   ³  ³  ÃÄ@delay_ms2  0/40  Ram=1
    ³  ³  ÃÄ@delay_ms2  0/40  Ram=1
    ³  ³  ÀÄ@delay_ms2  0/40  Ram=1
-   ³  ÃÄizq  0/164  Ram=6
+   ³  ÃÄizq  0/166  Ram=6
    ³  ³  ÃÄlcd_gotoxy  0/34  Ram=4
    ³  ³  ³  ÀÄ*
    ³  ³  ÃÄ@PSTRINGC_697  0/32  Ram=2
@@ -72,12 +74,33 @@
    ³  ³     ÀÄ*
    ³  ÃÄlcd_gotoxy  0/34  Ram=4
    ³  ³  ÀÄ*
-   ³  ÃÄ@PSTRINGCN_697  0/42  Ram=3
+   ³  ÃÄ@PSTRINGCN_697  0/30  Ram=3
    ³  ³  ÀÄ*
-   ³  ÃÄ@PRINTF_D_697  0/218  Ram=6
+   ³  ÃÄ@PRINTF_D_697  0/242  Ram=6
    ³  ³  ÀÄ*
-   ³  ÀÄpuerta  0/66  Ram=1
+   ³  ÀÄpuerta  0/120  Ram=1
    ³     ÀÄ*
-   ÀÄEmergencia  0/26  Ram=0
+   ÃÄtimer0  0/72  Ram=0
+   ³  ÃÄCronometro  0/32  Ram=1
+   ³  ÃÄlcd_gotoxy  0/34  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PRINTF_U_697  0/102  Ram=2
+   ³  ³  ÃÄ@DIV88  0/40  Ram=3
+   ³  ³  ÃÄlcd_putc  0/80  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@DIV88  0/40  Ram=3
+   ³  ³  ÃÄlcd_putc  0/80  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄlcd_putc  0/80  Ram=1
+   ³  ³     ÀÄ*
+   ³  ÃÄ@PSTRINGCN_697  0/30  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PRINTF_U_697  0/102  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÀÄlcd_gotoxy  0/34  Ram=4
+   ³     ÀÄ*
+   ÀÄEmergencia  0/34  Ram=0
+      ÃÄlcd_gotoxy  0/34  Ram=4
+      ³  ÀÄ*
       ÀÄ@PSTRINGC_697  0/32  Ram=2
          ÀÄ*
