@@ -18,6 +18,7 @@ screen= pygame.display.set_mode(size)
 
 #cargando imagen
 ascensor= pygame.image.load("ANIMACION-ABRIENDOSE.gif")
+<<<<<<< HEAD
 
 
 
@@ -29,6 +30,19 @@ ascensor= pygame.image.load("ANIMACION-ABRIENDOSE.gif")
      #   self.rect=self.image.get_rect()
      #   self.sprites.append(pygame.image.load('ANIMACION-ABRIENDOSE.gif'))
 
+=======
+
+
+
+#class Ascensor(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.image.load("ANIMACION-ABRIENDOSE.gif").convert()    
+        self.image.set_colorkey(BLACK)
+        self.rect=self.image.get_rect()
+        self.sprites.append(pygame.image.load('ANIMACION-ABRIENDOSE.gif'))
+
+>>>>>>> origin
 #Ascensor = Ascensor()
 #Ascensor.rect.x=200
 #Ascensor.rect.y=750 
