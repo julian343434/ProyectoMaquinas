@@ -28,8 +28,7 @@ Abriendo=cargar_animacion("./AscensorImagenes/Cerrado",".png",3)
 #images=[]
 #for i in range(1,4):
 #    name= "./AscensorImagenes/Cerrado"+str(i)+".png"
-#    images.append(image.load(name))
-cantidad =0
+#    images.append(image.load(name))SS
 while True:
     screen.fill((255,255,255))
     for e in event.get():
@@ -37,7 +36,7 @@ while True:
     #frame=int(time.time()*2)% len(images)   
     screen.blit(fondo,(0,0))
     screen.blit(AscensorIma,((ancho/2)-(150/2),largo-200))
-    mostrar_animacion(screen,Abriendo,2,100,100,1)   
-    #screen.blit(images[frame],(0,0))
+ 
+    #screen.blit(images[3],(100,100))
 
     display.flip()
