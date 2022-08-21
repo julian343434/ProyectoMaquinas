@@ -55,35 +55,33 @@ def mover_abajo(PisoRequerido, PisoActual):
     posicion_y=0
     if PisoActual==4 and PisoActual>PisoRequerido:
         posicion_y=15
-        posicionInicialY=posicion_y
+        #posicionInicialY=posicion_y
         Piso=PisoActual-PisoRequerido
         posicion_y=posicion_y+(CantidSube*Piso)
     elif PisoActual==3 and PisoActual>PisoRequerido:
         posicion_y=185
-        posicionInicialY=posicion_y
+        #posicionInicialY=posicion_y
         Piso=PisoActual-PisoRequerido
         posicion_y=posicion_y+(CantidSube*Piso)
     elif PisoActual==2 and PisoActual>PisoRequerido:
         posicion_y=385
-        posicionInicialY=posicion_y
+        #posicionInicialY=posicion_y
         Piso=PisoActual-PisoRequerido
         posicion_y=posicion_y+(CantidSube*Piso)
     elif PisoActual==1 and PisoActual>PisoRequerido:
         posicion_y=570
-        posicionInicialY=posicion_y
+        #posicionInicialY=posicion_y
         Piso=PisoActual-PisoRequerido
         posicion_y=posicion_y+(CantidSube*Piso)
 
     return posicion_y
 
-def PuertaAbrirCerrar():
-        mostrar_animacion(screen,Abriendo,1,posicionInicialX,posicionInicialY)
-        pygame.time.delay(10)
-        mostrar_animacion(screen,Abrierto,1,posicionInicialX,posicionInicialY)
-def PuertaAbrirCerrar():
-        mostrar_animacion(screen,Cerrando,1,posicionInicialX,posicionInicialY)
-        pygame.time.delay(10)
-        mostrar_animacion(screen,Cerrado,1,posicionInicialX,posicionInicialY)
+def PuertaAbrir():
+        mostrar_animacion(screen,Abriendo,1,posicionInicialX,CantidSube1)
+        mostrar_animacion(screen,Abrierto,1,posicionInicialX,CantidSube1)
+def PuertaCerrar():
+        mostrar_animacion(screen,Cerrando,1,posicionInicialX,cantidBaja1)
+        mostrar_animacion(screen,Cerrado,1,posicionInicialX,cantidBaja1)
 
 
 
@@ -92,7 +90,14 @@ def PuertaAbrirCerrar():
 init()
 
 Actual=1
-Pedido=4
+Pedido=1
+velocidad=5
+#if not Actual==3:
+posicionInicialY=570-((Actual-1)*185)
+#else:
+posicionInicialY=570-((Actual-1)*185)
+
+
 #detremina cuando se oprime un boton y arroja el valor de la posicion en ´pixels
 
 
@@ -100,7 +105,7 @@ Pedido=4
 screen=display.set_mode((ancho,largo))
 
 #carga el fondo
-fondo=image.load('./AscensorImagenes/fondo2.png')
+fondo=image.load('./AscensorImagenes/fondo3.png')
 
 
 
@@ -115,9 +120,11 @@ Abrierto=cargar_animacion("./AscensorImagenes/Cerrando",".png",1)
 #CantidSube1=mover_arriba(4,2)
 
 #mueve el elevador hacia abajo o arriba
+
+
 #CantidBaja1=mover_abajo(Pedido,Actual)
 CantidSube1=mover_arriba(Pedido,Actual)
-cantidBaja1=mover_arriba(Pedido,Actual)
+cantidBaja1=mover_abajo(Pedido,Actual)
 preguntar=True
 puerta=False
 MostrarPuerta=True
@@ -131,46 +138,46 @@ while True:
 
     screen.blit(fondo,(0,0))
 
+
+
+
     if Pedido>Actual and preguntar==True:
         y=-CantidSube1+posicionInicialY
         Arriba=True
         Abajo=False
         preguntar=False
     elif Pedido<Actual and preguntar==True:
-        y=CantidSube1-posicionInicialY
+        y=cantidBaja1-posicionInicialY
         Abajo=True
         Arriba=False
         preguntar=False
+    elif preguntar==True and Pedido==Actual:
+        Arriba=False
+        Abajo=False
+        preguntar=True 
+        mostrar_animacion(screen,Abrierto,1,posicionInicialX,posicionInicialY)
 
     if  Arriba==True:
         if y>cont:
+            if MostrarPuerta==True:
+                PuertaCerrar()
+
             mostrar_animacion(screen,Cerrado,1,posicionInicialX,posicionInicialY-cont)
-            cont=cont+1
+            cont=cont+velocidad
         else:
-            mostrar_animacion(screen,Abriendo,1,posicionInicialX,CantidSube1)
-            mostrar_animacion(screen,Abrierto,1,posicionInicialX,CantidSube1)
-            Arriba=False
+            PuertaAbrir()
             MostrarPuerta=True
     elif Abajo==True:
         if y>cont:
-            if MostrarPuerta==True:
-                mostrar_animacion(screen,Abriendo,1,posicionInicialX,posicionInicialY)
-                pygame.time.delay(2500)
-                mostrar_animacion(screen,Cerrando,1,posicionInicialX,posicionInicialY)
-                pygame.time.delay(2500)
-                mostrar_animacion(screen,Cerrado,1,posicionInicialX,posicionInicialY)
-                MostrarPuerta=False
             mostrar_animacion(screen,Cerrado,1,posicionInicialX,posicionInicialY+cont)
-            cont=cont+1
+            cont=cont+velocidad
         else:
-            mostrar_animacion(screen,Abriendo,1,posicionInicialX,cantidBaja1)
-            mostrar_animacion(screen,Abrierto,1,posicionInicialX,cantidBaja1)
-            Abajo=False
+            PuertaAbrir()
             MostrarPuerta = True
-    #if Estatus==False:
-     #   UltimaInstancia=mostrar_animacion(screen,Abrierto,2,posicionInicialX,15)
-    ##else:
-      #  UltimaInstancia=mostrar_animacion(screen,Cerrado,2,posicionInicialX,15)
+    #if Activado==True:
+    #    mostrar_animacion(screen,Abrierto,2,posicionInicialX,CantidSube1)
+    #else:
+        
 
     display.flip()
     display.update()
