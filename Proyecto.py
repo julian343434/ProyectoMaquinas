@@ -77,21 +77,22 @@ def mover_abajo(PisoRequerido, PisoActual):
     return posicion_y
 
 def PuertaAbrirCerrar():
-    if MostrarPuerta==True:
         mostrar_animacion(screen,Abriendo,1,posicionInicialX,posicionInicialY)
         pygame.time.delay(10)
+        mostrar_animacion(screen,Abrierto,1,posicionInicialX,posicionInicialY)
+def PuertaAbrirCerrar():
         mostrar_animacion(screen,Cerrando,1,posicionInicialX,posicionInicialY)
         pygame.time.delay(10)
         mostrar_animacion(screen,Cerrado,1,posicionInicialX,posicionInicialY)
-    MostrarPuerta=False
+
 
 
 
 ##################
 init()
 
-Actual=4
-Pedido=1
+Actual=1
+Pedido=4
 #detremina cuando se oprime un boton y arroja el valor de la posicion en ´pixels
 
 
