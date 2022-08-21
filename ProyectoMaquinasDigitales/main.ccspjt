@@ -17,7 +17,7 @@ Type=4
 forcecoff=0
 
 [ProjectLog]
-Days=5
+Days=6
 D1=07-08-2022
 D1_L=6
 D1_L1=[1454]Project Opened.
@@ -98,6 +98,10 @@ D5_E=109
 D5_D=0
 D5_L=1
 D5_L1=[4304]Project Closed.
+D6=20-08-2022
+D6_L=2
+D6_L1=[77932]Project Opened.
+D6_L2=[79212]Project Closed.
 
 [Opened Files]
 1=main.c
