@@ -12,8 +12,8 @@ posicionInicialY=570
 CantidSube=185
 cont=0
 ##
-Actual=2
-Pedido=3
+Actual=1
+Pedido=1
 Preguntar=True
 velocidad=5
 
@@ -193,42 +193,51 @@ while True:
 ################################################################################################
 ##BOTON DE BAJADA
             if animando == False:
-                print(Actual,Pedido)
-                if RectImagenBotonAbajo1.collidepoint(mouse.get_pos()):                      
-                    Pedido=Pedido-1
-                    if Pedido==0 or Actual==2 or Actual==3 or Actual==4 or Actual==5:
-                        Pedido=Pedido+1
-                elif RectImagenBotonAbajo2.collidepoint(mouse.get_pos()):                      
-                    Pedido=Pedido-1
-                    if Pedido==0 or Actual==3 or Actual==4 or Actual==5:
-                        Pedido=Pedido+1
-                elif RectImagenBotonAbajo3.collidepoint(mouse.get_pos()):                     
-                    Pedido=Pedido-1
-                    if Pedido==1 or Actual==4 or Actual==5:
-                        Pedido=Pedido+1
-                elif RectImagenBotonAbajo4.collidepoint(mouse.get_pos()):                      
-                    Pedido=Pedido-1
-                    if Pedido==2 or Pedido==1 or Pedido==0:
-                        Pedido=Pedido+1
-    ################################################################################################
-    ##BOTON DE SUBIDA
-                elif RectImagenBotonArriba4.collidepoint(mouse.get_pos()):                      
-                    Pedido=Pedido+1
-                    if Pedido==5 or Actual==0 or Actual==1 or Actual==2 or Actual==3:
+                if  RectImagenBotonNumero1.collidepoint(mouse.get_pos()):
+                    Pedido=1
+                elif RectImagenBotonNumero2.collidepoint(mouse.get_pos()):
+                    Pedido=2
+                elif RectImagenBotonNumero3.collidepoint(mouse.get_pos()):
+                    Pedido=3
+                elif RectImagenBotonNumero4.collidepoint(mouse.get_pos()):
+                    Pedido=4
+                else:                
+                    if RectImagenBotonAbajo1.collidepoint(mouse.get_pos()):                      
                         Pedido=Pedido-1
-                elif RectImagenBotonArriba3.collidepoint(mouse.get_pos()):                      
-                    Pedido=Pedido+1
-                    if Pedido==5 or Actual==0 or Actual==1 or Actual==2:
+                        if Pedido==0 or Actual==2 or Actual==3 or Actual==4 or Actual==5:
+                            Pedido=Pedido+1
+                    elif RectImagenBotonAbajo2.collidepoint(mouse.get_pos()):                      
                         Pedido=Pedido-1
-                elif RectImagenBotonArriba2.collidepoint(mouse.get_pos()):                     
-                    Pedido=Pedido+1
-                    if Pedido==4 or Actual==0 or Actual==1 or Actual==4:
+                        if Pedido==0 or Actual==3 or Actual==4 or Actual==5:
+                            Pedido=Pedido+1
+                    elif RectImagenBotonAbajo3.collidepoint(mouse.get_pos()):                     
                         Pedido=Pedido-1
-                elif RectImagenBotonArriba1.collidepoint(mouse.get_pos()):                      
-                    Pedido=Pedido+1
-                    if Pedido==3 or Pedido==4 or Pedido==5:
+                        if Pedido==1 or Actual==4 or Actual==5:
+                            Pedido=Pedido+1
+                    elif RectImagenBotonAbajo4.collidepoint(mouse.get_pos()):                      
                         Pedido=Pedido-1
-
+                        if Pedido==2 or Pedido==1 or Pedido==0:
+                            Pedido=Pedido+1
+        ################################################################################################
+        ##BOTON DE SUBIDA
+                    elif RectImagenBotonArriba4.collidepoint(mouse.get_pos()):                      
+                        Pedido=Pedido+1
+                        if Pedido==5 or Actual==0 or Actual==1 or Actual==2 or Actual==3:
+                            Pedido=Pedido-1
+                    elif RectImagenBotonArriba3.collidepoint(mouse.get_pos()):                      
+                        Pedido=Pedido+1
+                        if Pedido==5 or Actual==0 or Actual==1 or Actual==2:
+                            Pedido=Pedido-1
+                    elif RectImagenBotonArriba2.collidepoint(mouse.get_pos()):                     
+                        Pedido=Pedido+1
+                        if Pedido==4 or Actual==0 or Actual==1 or Actual==4:
+                            Pedido=Pedido-1
+                    elif RectImagenBotonArriba1.collidepoint(mouse.get_pos()):                      
+                        Pedido=Pedido+1
+                        if Pedido==3 or Pedido==4 or Pedido==5:
+                            Pedido=Pedido-1
+            else:
+                print("MOVIENDOSE")
             print(Actual,Pedido)
     screen.blit(fondo,(0,0))
     screen.blit(fondo,(0,0))
@@ -240,6 +249,10 @@ while True:
     screen.blit(BotonAbajo2,(471,450))
     screen.blit(BotonAbajo3,(471,256))
     screen.blit(BotonAbajo4,(471,62))
+    screen.blit(BotonNumero1,(156,580))   
+    screen.blit(BotonNumero2,(226,580))
+    screen.blit(BotonNumero3,(156,650))
+    screen.blit(BotonNumero4,(226,650))
 ########## 
 
 
@@ -281,7 +294,6 @@ while True:
             posicionInicialY=CantidSube1
             preguntar=True
             cont=0
-            animando=False
             PuertaAbrir()
     elif Abajo==True:
         if y>cont:
