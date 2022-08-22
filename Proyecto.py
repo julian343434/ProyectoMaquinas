@@ -15,7 +15,7 @@ cont=0
 Actual=1
 Pedido=1
 Preguntar=True
-velocidad=5
+velocidad=20
 
 
 def cargar_animacion(prefijo,sufijo,n):
@@ -212,7 +212,7 @@ while True:
                             Pedido=Pedido+1
                     elif RectImagenBotonAbajo3.collidepoint(mouse.get_pos()):                     
                         Pedido=Pedido-1
-                        if Pedido==1 or Actual==4 or Actual==5:
+                        if Pedido==1 or Actual==4 or Actual==5 or Actual==1:
                             Pedido=Pedido+1
                     elif RectImagenBotonAbajo4.collidepoint(mouse.get_pos()):                      
                         Pedido=Pedido-1
