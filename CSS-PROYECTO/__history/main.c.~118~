@@ -62,7 +62,7 @@ void rb_isr(){
          }
       }
       else{
-         output_low(PIN_B4);
+         utput_low(PIN_B4);
             setup_ccp1(ccp_off);
             setup_ccp2(ccp_off); 
             output_low(PIN_B4);

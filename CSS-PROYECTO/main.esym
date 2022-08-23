@@ -1,9 +1,9 @@
-D G "__PCH__" 0 133 ""5.076""
-D G "__DEVICE__" 0 133 "4550"
-D G "__DATE__" 0 133 ""15-ago.-22""
-D G "__TIME__" 0 133 ""21:10:44""
-D G "_UNICODE" 0 133 ""?""
-D G "__EVAL" 0 133 ""?"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 200 ""5.076""
+D G "__DEVICE__" 0 200 "4550"
+D G "__DATE__" 0 200 ""23-ago.-22""
+D G "__TIME__" 0 200 ""02:08:35""
+D G "_UNICODE" 0 200 ""?""
+D G "__EVAL" 0 200 ""?"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 45 ""
 v L "value" 2 45 "int8" `55 
@@ -2547,34 +2547,39 @@ V L "on" 3 443 "int8" `708
 F G "lcd_cursor_on" 3 444 "void(int8 on)" `707 
 C L "lcd_cursor_on" 3 2 1 "FUNCTION"
 C L "lcd_cursor_on" 3 2 1 "FUNCTION"
-V G "t" 0 14 "int32" `709 
-V G "tp" 0 15 "int32" `710 
-V G "cont" 0 16 "int8" `711 
-V G "iterador" 0 17 "int16" `712 
-V G "actual" 0 18 "int8" `713 
-V G "recorrer" 0 19 "int8" `714 
-V G "minutoR" 0 19 "int8" `715 
-V G "segundoR" 0 19 "int8" `716 
-V G "tiempo" 0 20 "int8" `717 
-V G "minuto" 0 20 "int8" `718 
-V G "Start" 0 21 "int1" `719 
-V G "Cro" 0 21 "int1" `720 
-F N "Cronometro" 0 23 ""
-F G "Cronometro" 0 23 "void()" `721 
-F N "timer0" 0 38 ""
-F G "timer0" 0 38 "void()" `722 
-F N "Emergencia" 0 49 ""
-F G "Emergencia" 0 49 "void()" `732 
-F N "puerta" 0 56 ""
-F G "puerta" 0 56 "void()" `738 
-F N "der" 0 66 ""
-V L "recorrer" 0 66 "int8" `740 
-F G "der" 0 66 "void(int8 recorrer)" `739 
-F N "izq" 0 74 ""
-V L "recorrer" 0 74 "int8" `747 
-F G "izq" 0 74 "void(int8 recorrer)" `746 
-F N "MAIN" 0 82 ""
-F G "MAIN" 0 82 "void()" `750 
+V G "analogo" 0 14 "int16" `709 
+V G "t" 0 16 "int32" `710 
+V G "tp" 0 17 "int32" `711 
+V G "cont" 0 18 "int8" `712 
+V G "iterador" 0 19 "int16" `713 
+V G "actual" 0 20 "int8" `714 
+V G "recorrer" 0 21 "int8" `715 
+V G "minutoR" 0 21 "int8" `716 
+V G "segundoR" 0 21 "int8" `717 
+V G "tiempo" 0 22 "int8" `718 
+V G "minuto" 0 22 "int8" `719 
+V G "Start" 0 23 "int1" `720 
+V G "Cro" 0 23 "int1" `721 
+F N "rb_isr" 0 26 ""
+F G "rb_isr" 0 26 "void()" `722 
+F N "Configuracion" 0 78 ""
+F G "Configuracion" 0 78 "void()" `723 
+F N "Cronometro" 0 86 ""
+F G "Cronometro" 0 86 "void()" `724 
+F N "timer0" 0 101 ""
+F G "timer0" 0 101 "void()" `725 
+F N "Emergencia" 0 112 ""
+F G "Emergencia" 0 112 "void()" `735 
+F N "puerta" 0 119 ""
+F G "puerta" 0 119 "void()" `741 
+F N "der" 0 129 ""
+V L "recorrer" 0 129 "int8" `743 
+F G "der" 0 129 "void(int8 recorrer)" `742 
+F N "izq" 0 137 ""
+V L "recorrer" 0 137 "int8" `750 
+F G "izq" 0 137 "void(int8 recorrer)" `749 
+F N "MAIN" 0 145 ""
+F G "MAIN" 0 145 "void()" `753 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

@@ -17,7 +17,7 @@ Type=4
 forcecoff=0
 
 [ProjectLog]
-Days=6
+Days=8
 D1=07-08-2022
 D1_L=6
 D1_L1=[1454]Project Opened.
@@ -25,7 +25,7 @@ D1_L2=[1468]Project Closed.
 D1_L3=[1488]Project Opened.
 D1_L4=[1497]Started Editing.
 D1_L5=[2026]Stopped Editing.
-TotalEdit=126
+TotalEdit=226
 TotalDebug=0
 D1_E=4
 D1_D=0
@@ -102,10 +102,36 @@ D6=20-08-2022
 D6_L=2
 D6_L1=[77932]Project Opened.
 D6_L2=[79212]Project Closed.
+D7=22-08-2022
+D7_L=13
+D7_L1=[79287]Project Opened.
+D7_L2=[79499]Project Closed.
+D7_L3=[79533]Project Opened.
+D7_L4=[79552]Started Editing.
+D7_L5=[79855]Stopped Editing.
+D7_L6=[79884]Started Editing.
+D7_L7=[80354]Stopped Editing.
+D7_L8=[80367]Started Editing.
+D7_L9=[81635]Stopped Editing.
+D7_L10=[81677]Started Editing.
+D7_L11=[81978]Stopped Editing.
+D7_L12=[85500]Started Editing.
+D7_L13=[85800]Stopped Editing.
+D8=23-08-2022
+D8_L=7
+D8_L1=[1368]Started Editing.
+D8_L2=[2443]Stopped Editing.
+D8_L3=[3360]Started Editing.
+D8_L4=[5202]Stopped Editing.
+D8_L5=[5239]Started Editing.
+D8_L6=[7769]Stopped Editing.
+D8_E=100
+D8_D=0
+D8_L7=[7769]Project Closed.
 
 [Opened Files]
 1=main.c
-t1=1
+t1=55
 Count=1
 2=Cronometro\Cronometro.c
 t2=1
@@ -115,7 +141,7 @@ t3=5
 Type=4
 
 [defines]
-buildcount=61
+buildcount=70
 [Units]
 Count=1
 1=main (main)

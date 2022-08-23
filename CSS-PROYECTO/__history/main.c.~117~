@@ -45,8 +45,8 @@ void rb_isr(){
          output_high(PIN_C4);
       }
    }
-   if(input(pin_C5)==0){
-      if(input(pin_B5)==0){
+      if(input(pin_C5)==0){
+         if(input(pin_B5)==0){
             output_low(PIN_B4);
             output_low(PIN_B5);
             output_low(PIN_C4);
@@ -61,17 +61,6 @@ void rb_isr(){
             output_low(PIN_C5);
          }
       }
-      else{
-         output_low(PIN_B4);
-            setup_ccp1(ccp_off);
-            setup_ccp2(ccp_off); 
-            output_low(PIN_B4);
-            output_low(PIN_B5);
-            output_low(PIN_C4);
-            output_low(PIN_C5);
-            output_low(PIN_C1);
-            output_low(PIN_C2);
-      }    
    }
    
 

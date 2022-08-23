@@ -20,14 +20,17 @@ int recorrer=0,minutoR=0,segundoR=0;
 int tiempo=0,minuto=0;
 boolean Start=true,Cro=false;
 
+void Configuracion(){
+   
+}
+
 void Cronometro(){
    if(Cro==true){
-      tiempo=tiempo+1;
+      tiempo++;
       if (tiempo>60){
-      minuto=1+minuto;
+      minuto++;
       }
-   }
-   else{
+   }else{
       minutoR=minuto+minutoR;
       segundoR=tiempo+segundoR;
       tiempo=0;
@@ -37,18 +40,12 @@ void Cronometro(){
 
 #int_timer0
 void timer0(){
-   iterador=iterador+1;
-   if(iterador==2000){
-   output_toggle(PIN_B5);
+   output_toggle(PIN_E2);
    Cronometro();
-   }
-   else{
-      lcd_gotoxy(10,2); 
-      printf(lcd_putc,"\f%3u",segundoR);
-      lcd_gotoxy(10,2);       
-      printf(lcd_putc,"\f:%3u",minutoR);   
-   }
-   set_timer0(131);
+   lcd_gotoxy(1,2);
+   printf(lcd_putc,"%2u : %2u",minutoR,segundoR);
+   lcd_gotoxy(1,1);
+   set_timer0(57724);
 }
 
 
@@ -61,69 +58,68 @@ void Emergencia(){
    Output_low(pin_E0);
 }
 void puerta(){
-   Output_low(pin_A1);
-   Output_high(pin_A0);
+   Output_low(pin_B7);
+   Output_high(pin_B6);
    delay_ms(tp);
-   Output_low(pin_A0);
-   Output_high(pin_A1);
+   Output_low(pin_B6);
+   Output_high(pin_B7);
    delay_ms(tp);
-   Output_low(pin_A1);
+   Output_low(pin_B7);
    Cro=false;
 }
-
 void der(recorrer){
-   lcd_gotoxy(1,1);
+   lcd_gotoxy(9,1);
    printf(lcd_putc,"subiendo");
-   output_high(pin_E0);
+   output_high(pin_C1);
    delay_ms(recorrer*t);
-   Output_low(pin_E0);
+   Output_low(pin_C2);
    printf(lcd_putc,"\f");
 }
 void izq(recorrer){
-   lcd_gotoxy(1,1);
+   lcd_gotoxy(9,1);
    printf(lcd_putc,"bajando");
-   Output_high(pin_E1);
+   Output_high(pin_C1);
    delay_ms(recorrer*t);
-   output_low(pin_E1);
+   output_low(pin_C2);
    printf(lcd_putc,"\f");
 }
 void main(){
    set_tris_A(0xff);
    set_tris_B(0xff);
-   set_tris_C(0xff);
-   set_tris_A(0x00);
-   set_tris_A(0x00);
+   set_tris_C(0x00);
+   set_tris_D(0x00);
+   set_tris_E(0x00);
    lcd_Init();
-   setup_timer_0(T0_8_BIT | RTCC_INTERNAL | T0_DIV_4 );
-   set_timer0(131);
+   setup_timer_0(RTCC_INTERNAL | T0_DIV_256 );
+   set_timer0(57724);
    Enable_Interrupts(Int_TIMER0);
    Enable_Interrupts(Int_Ext);
    Enable_Interrupts(Global);
    Ext_Int_Edge(0, L_TO_H);
    lcd_gotoxy(1,1);
-   printf(lcd_putc,"Piso%i",cont);
+   printf(lcd_putc,"Piso %i",cont);
    while(Start){
-      if(input(pin_C0)==1){
+      if(input(pin_A2)==1){
          Cro=true;
          cont=1;
       }
-      if(input(pin_C1)==1){
+      if(input(pin_A3)==1){
          Cro=true;
          cont=2;
       }
-      if(input(pin_C2)==1){
+      if(input(pin_A4)==1){
          Cro=true;
          cont=3;
       }
-      if(input(pin_C4)==1){
+      if(input(pin_A5)==1){
          Cro=true;
          cont=4;
       }
       while(cont>actual){
-         recorrer=cont-actual;
+         recorrer=cont-actual; 
          der(recorrer);
          lcd_gotoxy(1,1);
-         printf(lcd_putc,"Piso%i",cont);
+         printf(lcd_putc,"Piso %i",cont);
          puerta();
          actual=cont;
       }
@@ -131,7 +127,7 @@ void main(){
          recorrer=-cont+actual;
          izq(recorrer);
          lcd_gotoxy(1,1);
-         printf(lcd_putc,"Piso%i",cont);
+         printf(lcd_putc,"Piso %i",cont);
          puerta();
          actual=cont;         
       }
