@@ -1,0 +1,184 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A-01D t
+01E-021 tp
+022     cont
+023-024 iterador
+025     actual
+026     recorrer
+027     minutoR
+028     segundoR
+029     tiempo
+02A     minuto
+02B.0   Start
+02B.1   Cro
+02C-02D @sprintf_string
+02E     @PRINTF_D_697.P1
+02E     der.recorrer
+02E     izq.recorrer
+02E     lcd_init.i
+02E     puerta.@SCRATCH1
+02E     MAIN.@SCRATCH1
+02F-032 lcd_init.LCD_INIT_STRING
+02F     @PRINTF_D_697.P1
+02F-032 @MUL3232.P2
+02F     der.@SCRATCH1
+02F     izq.@SCRATCH1
+030     der.@SCRATCH2
+030     izq.@SCRATCH2
+030     @PRINTF_D_697.@SCRATCH1
+031     der.@SCRATCH3
+031     izq.@SCRATCH3
+031     @PRINTF_D_697.@SCRATCH2
+032     der.@SCRATCH4
+032     izq.@SCRATCH4
+032     @PRINTF_D_697.@SCRATCH3
+033-036 @MUL3232.P1
+033     lcd_init.@SCRATCH1
+033     der.@SCRATCH5
+033     izq.@SCRATCH5
+033     @PRINTF_D_697.@SCRATCH4
+037     @MUL3232.@SCRATCH1
+038     @MUL3232.@SCRATCH2
+039     @MUL3232.@SCRATCH3
+03A     @MUL3232.@SCRATCH4
+03B     @MUL3232.@SCRATCH5
+03C     @MUL3232.@SCRATCH6
+03F     @PSTRINGCN_697.P1
+03F     @PRINTF_U_697.P2
+03F     Cronometro.@SCRATCH1
+03F     @PSTRINGC_697.@SCRATCH1
+040     @PRINTF_U_697.P1
+040     @PSTRINGCN_697.@SCRATCH1
+040     @PSTRINGC_697.@SCRATCH2
+041     @DIV88.P1
+041     @PSTRINGCN_697.@SCRATCH2
+042     lcd_putc.c
+042     @DIV88.P1
+043     lcd_gotoxy.x
+043     @delay_ms2.P1
+043     @DIV88.@SCRATCH1
+044     lcd_gotoxy.y
+045     lcd_gotoxy.address
+046     lcd_gotoxy.@SCRATCH1
+047     lcd_send_byte.address
+048     lcd_send_byte.n
+049     lcd_read_byte.low
+049     lcd_send_byte.@SCRATCH1
+04A     lcd_send_nibble.n
+04A     lcd_read_byte.high
+04B     lcd_read_nibble.n
+04B     lcd_read_byte.@SCRATCH1
+04C     lcd_read_nibble.@SCRATCH1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000BA  Cronometro
+0000DA  lcd_read_nibble
+00012C  lcd_read_byte
+000174  lcd_send_nibble
+0001B2  lcd_send_byte
+0001F8  lcd_gotoxy
+00021A  @DIV88
+000242  @delay_ms2
+00026A  lcd_putc
+0002BA  @PRINTF_U_697
+000320  @PSTRINGCN_697
+00033E  timer0
+000386  @const723.call
+000390  @PSTRINGC_697
+0003B0  Emergencia
+0003D2  @const733.call
+0003DE  @const741.call
+0003E8  @const748.call
+0003F0  @const753.call
+0003F8  @const757.call
+000400  @const758.call
+000408  lcd_init
+0004CC  @PRINTF_D_697
+0005BE  @MUL3232
+000612  der
+0006B8  puerta
+000730  izq
+0007D6  MAIN
+0007D6  @cinit1
+000824  @cinit2
+
+Project Directory:
+    C:\Users\La Economia\Documents\proyecto\ProyectoMaquinas\ProyectoMaquinasDigitales\
+
+Project Files:
+    main.c                                                  [15-ago.-22 21:10  CRC=C2DC6283]
+    main.h                                                  [07-ago.-22 00:24  CRC=00000000]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [15-ene.-18 15:57  CRC=06200171]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c [22-feb.-16 09:05  CRC=D1A6378A]
+
+Source signature=6C48D308
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=75EA
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA
