@@ -1,5 +1,5 @@
 ÀÄmain
-   ÃÄMAIN  0/396  Ram=1
+   ÃÄMAIN  0/424  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄlcd_init  0/196  Ram=6
    ³  ³  ÃÄ@delay_ms2  0/40  Ram=1
@@ -40,6 +40,7 @@
    ³  ³  ³  ÀÄ*
    ³  ³  ÀÄlcd_putc  0/80  Ram=1
    ³  ³     ÀÄ*
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/36  Ram=2
    ³  ÃÄder  0/166  Ram=6
    ³  ³  ÃÄlcd_gotoxy  0/34  Ram=4
    ³  ³  ³  ÀÄ*

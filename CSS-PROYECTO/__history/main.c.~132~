@@ -23,7 +23,7 @@ int recorrer=0,minutoR=0,segundoR=0;
 int tiempo=0,minuto=0;
 boolean Start=true,Cro=false;
 
-void Motor(){
+void rb_isr(){
    if (input(pin_c4)==1){
       set_pwm1_duty(analogo);
    }
@@ -127,7 +127,7 @@ void puerta(){
    Cro=false;
 }
 void der(recorrer){
-   set_pwm2_duty(analogo);
+   set_pwm1_duty(analogo);
    setup_ccp1(ccp_off);
    setup_ccp2(ccp_off);
    lcd_gotoxy(9,1);
@@ -144,7 +144,7 @@ void der(recorrer){
    output_low(pin_C2);
 }
 void izq(recorrer){
-   set_pwm1_duty(analogo);
+    set_pwm1_duty(analogo);
    setup_ccp1(ccp_off);
    setup_ccp2(ccp_off);
    lcd_gotoxy(9,1);
@@ -163,7 +163,7 @@ void izq(recorrer){
 void main(){
    set_tris_A(0xff);
    set_tris_B(0xff);
-   set_tris_C(0x00);
+   set_tris_C(0xff);
    set_tris_D(0x00);
    set_tris_E(0x00);
    lcd_Init();

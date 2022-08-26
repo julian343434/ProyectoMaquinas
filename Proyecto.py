@@ -3,6 +3,11 @@ import pygame
 from operator import truediv
 from pygame import*
 import sys ,time
+import serial
+
+pic18f4550= serial.Serial(port='COM4', baudrate=9600,parity=serial.PARITY_NONE,stopbits=serial.STOPBITS_ONE,bytesize=serial.EIGHTBITS)
+
+
 WHITE=(255,255,255)
 ##
 ancho=1400
@@ -86,9 +91,10 @@ def mover_abajo(PisoRequerido, PisoActual):
         posicionInicialY=posicion_y
     return posicion_y
 
-def PuertaAbrir():
-        mostrar_animacion(screen,Abriendo,1,posicionInicialX,posicionInicialY)
-        mostrar_animacion(screen,Abrierto,1,posicionInicialX,posicionInicialY)
+def PuertaAbrir():  
+    mostrar_animacion(screen,Abriendo,1,posicionInicialX,posicionInicialY)
+    for i in range (1,1000):
+        mostrar_animacion(screen,Abrierto,1,posicionInicialX,posicionInicialY)   
 def PuertaCerrar():
         mostrar_animacion(screen,Cerrando,1,posicionInicialX,posicionInicialY)
         mostrar_animacion(screen,Cerrado,1,posicionInicialX,posicionInicialY)
@@ -123,7 +129,7 @@ BotonNumero3=image.load('./AscensorImagenes/BotonNumero3.png').convert_alpha()
 BotonNumero4=image.load('./AscensorImagenes/BotonNumero4.png').convert_alpha()
 
 #carga animaciones
-Abriendo=cargar_animacion("./AscensorImagenes/Cerrando",".png",3)
+Abriendo=cargar_animacion("./AscensorImagenes/Cerrando",".png",2)
 Cerrando=cargar_animacion("./AscensorImagenes/Abriendo",".png",3)
 Cerrado=cargar_animacion("./AscensorImagenes/Abriendo",".png",1)
 Abrierto=cargar_animacion("./AscensorImagenes/Cerrando",".png",1)
@@ -197,6 +203,7 @@ while True:
                     Pedido=1
                 elif RectImagenBotonNumero2.collidepoint(mouse.get_pos()):
                     Pedido=2
+
                 elif RectImagenBotonNumero3.collidepoint(mouse.get_pos()):
                     Pedido=3
                 elif RectImagenBotonNumero4.collidepoint(mouse.get_pos()):
@@ -239,6 +246,7 @@ while True:
             else:
                 print("MOVIENDOSE")
             print(Actual,Pedido)
+    PedidoPIC=Pedido
     screen.blit(fondo,(0,0))
     screen.blit(fondo,(0,0))
     screen.blit(BotonArriba1,(510,644))
@@ -255,6 +263,8 @@ while True:
     screen.blit(BotonNumero4,(226,650))
 ########## 
 
+
+########## CARGA EL VALOR A ENVIAR POR USART
 
 
 ########## PREGUNTA EL PISO Y MUEVE O BAJA DE PISO

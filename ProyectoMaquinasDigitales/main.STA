@@ -1,29 +1,29 @@
 
-ROM used:   2398/32768 (7%)
-            2398/32768 (7%) including unused fragments
+ROM used:   2486/32768 (8%)
+            2486/32768 (8%) including unused fragments
 
             1.7 Average locations per line
-            12.6 Average locations per statement
+            12.9 Average locations per statement
 
-RAM used:   47/2048 (2%) at main() level
-            77/2048 (4%) worst case
+RAM used:   48/2048 (2%) at main() level
+            78/2048 (4%) worst case
 
 Stack used: 13 worst case (6 in main + 7 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  132    90  47  main.c
+  141    92  48  main.c
     8     0   0  main.h
-  852     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
-  456   100  53  ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c
+  852     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  456   100  52  ..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c
 ----- -----
- 1448   190 Total
+ 1457   192 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
 0     40   1    1             @delay_ms2
-0     72   2    3    760  4.5  lcd_read_byte
+0     72   1    3    760  4.5  lcd_read_byte
 0     82   2    2    262  3.7  lcd_read_nibble
 0     62   1    1    399  2.4  lcd_send_nibble
 0     70   1    3    415  3.7  lcd_send_byte
@@ -31,45 +31,47 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0     34   1    4    208  6.3  lcd_gotoxy
 0     80   2    1    354  4.7  lcd_putc
 0     32   1    1    202  4.4  Cronometro
-0     72   2    0    158  1.7  timer0
-0     10   0    0   1427  6.3  @const723
-0     40   1    3   1427  6.3  @DIV88
-0    102   2    2    112  2.0  @PRINTF_U_697
-0     30   1    3   1427  6.3  @PSTRINGCN_697
+0     72   1    0    158  1.7  timer0
+0     10   0    0             @const729
+0     40   1    3             @DIV88
+0    102   2    2             @PRINTF_U_697
+0     30   1    3             @PSTRINGCN_697
 0     34   1    0    112  2.0  Emergencia
-0     12   0    0   1427  6.3  @const733
-0     32   1    2   1443  6.3  @PSTRINGC_697
-0    120   3    1    152  1.8  puerta
+0     12   0    0             @const739
+0     32   1    2             @PSTRINGC_697
+0    120   2    1    152  1.8  puerta
 0    166   3    6    163  2.1  der
-0     10   0    0   1427  6.3  @const741
-0     84   2   14   1427  6.3  @MUL3232
+0     10   0    0             @const747
+0     84   2   14             @MUL3232
 0    166   3    6    163  2.1  izq
-0      8   0    0    163  2.1  @const748
-0    396   8    1   1427  6.3  MAIN
-0      8   0    0   1443  6.3  @const753
+0      8   0    0             @const754
+0    424   9    1   1460  6.3  MAIN
+0      8   0    0             @const759
 0    242   5    6             @PRINTF_D_697
-0      8   0    0             @const757
-0      8   0    0             @const758
+0     24   0    0             @const763
+0     36   1    2             @PSTRINGC_9600_31766_31767
+0      8   0    0             @const765
+0      8   0    0             @const766
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               24
-    Statements              190
+    Functions               14
+    Statements              192
     Comments                256
-    Volume (V)              28913
-    Difficulty (D)          106.3
-    Effort to implement (E) 3072880
-    Time to implement (T)   47 hours, 25 minutes
-    Est Delivered Bugs (B)  7
-    Cyclomatic Complexity   46
-    Maintainability (MI)    53
+    Volume (V)              9176
+    Difficulty (D)          50.1
+    Effort to implement (E) 459637
+    Time to implement (T)   7 hours, 6 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   14
+    Maintainability (MI)    111
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-00006     0  4  
 00008-000B8   178  0  
-000BA-07FFE  2216  30366  
+000BA-07FFE  2304  30278  
 
 
 

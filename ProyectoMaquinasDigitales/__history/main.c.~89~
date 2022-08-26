@@ -11,9 +11,9 @@
 #define LCD_DATA7 PIN_D7
 #include <lcd.c>
 
-#use RS232(baud=9600,bits=8,parity=N,xmit=pin_c6,rcv=pin_c7,stop=0)
+#use RS232(baud=9600,bits=8,parity=N,xmit=pin_c6,rcv=pin_c7)
 
-int dato=29;
+int dato=0
 
 int32 t=1000;
 int32 tp=5000;
@@ -90,7 +90,7 @@ void izq(recorrer){
 void main(){
    set_tris_A(0xff);
    set_tris_B(0xff);
-   set_tris_C(0x00);
+   set_tris_C(0xff);
    set_tris_D(0x00);
    set_tris_E(0x00);
    lcd_Init();
@@ -102,8 +102,9 @@ void main(){
    Ext_Int_Edge(0, L_TO_H);
    lcd_gotoxy(1,1);
    printf(lcd_putc,"Piso %i",cont);
-   printf("comunicacion serial \n\r");
    while(Start){
+   
+      putc(dato);
       if(input(pin_C0)==1){
          Cro=true;
          cont=1;

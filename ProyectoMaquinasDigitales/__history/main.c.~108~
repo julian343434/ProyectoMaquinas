@@ -102,8 +102,8 @@ void main(){
    Ext_Int_Edge(0, L_TO_H);
    lcd_gotoxy(1,1);
    printf(lcd_putc,"Piso %i",cont);
-   printf("comunicacion serial \n\r");
    while(Start){
+      printf("comunicacion serial \n\r");
       if(input(pin_C0)==1){
          Cro=true;
          cont=1;
