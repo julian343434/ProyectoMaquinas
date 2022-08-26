@@ -1,0 +1,13 @@
+#include <18F4550.h>                
+#device ADC=10                         
+#fuses HS, NOWRT, NOWDT,NOPROTECT, NOPUT, NOLVP 
+#use delay(crystal=8000000)             
+#include <stdlib.h>                     
+
+#BYTE PORTB = 0xF81                   
+#BYTE TRISB = 0xF93                      
+
+#use RS232(baud=9600,bits=8,parity=N,xmit=pin_c6,rcv=pin_c7)
+
+
+

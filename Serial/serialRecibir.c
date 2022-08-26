@@ -1,0 +1,30 @@
+#include <18F4550.h>                     //Incluimos la librería 18F455
+#device ADC=10                         
+#fuses HS, NOWRT, NOWDT,NOPROTECT, NOPUT, NOLVP 
+#use delay(crystal=8000000)             
+#include <stdlib.h>                     
+
+#BYTE PORTB = 0xF81                   
+#BYTE TRISB = 0xF93                      
+
+#use RS232(baud=9600,bits=8,parity=N,xmit=pin_c6,rcv=pin_c7)
+
+
+int dato =0;
+
+#int_rda                                 //Habilita la función de interrupción por recepción de datos 
+void rda_isr()                           //Función de interrupción recepción de datos.
+{
+   dato=getc();                          //Asigna el valor de recepción a la variable dato.
+  
+}
+void main (){
+   enable_interrupts(int_rda);           //Habilitamos la interrupción por recepción
+   enable_interrupts(GLOBAL);  
+
+   while(true){
+      if (dato==0){
+         output_toggle(PIN_B1);
+      }
+   }
+}
